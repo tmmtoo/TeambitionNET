@@ -1,3 +1,10 @@
+#这是一个TeambitionShare修改版本，因为原版本不支持Teambition国际版，这次修改过，以支持国际版本，欢迎使用。欢迎入群交流~~~
+
+tg：https://t.me/rssdaniao
+
+tg群：https://t.me/daniaoboke
+
+安装教程：https://www.daniao.org/11789.html
 # TeambitionShare
 挂载Teambition文件(网盘文件列表程序)  
 ## 说明
