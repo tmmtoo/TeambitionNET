@@ -4,7 +4,7 @@ tg：https://t.me/rssdaniao
 
 tg群：https://t.me/daniaoboke
 
-安装教程：https://www.daniao.org/11789.html
+安装教程：https://www.daniao.org/13352.html
 
 演示：http://tb.qixi.me/
 # TeambitionShare
