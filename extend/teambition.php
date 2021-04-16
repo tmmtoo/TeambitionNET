@@ -2,7 +2,8 @@
 /**
  * Teambition操作类
  * @author 拾年<211154860@qq.com>
- * @version 1.1
+ * 修改xiao shitou
+ * @version 1.2
  */
 
 namespace extend;
@@ -12,7 +13,7 @@ class teambition{
      * @return string
      */
     public static function get_login_token(){
-        $html = self::get('https://account.teambition.com/login/password');
+        $html = self::get('https://us-account.teambition.com/login');
         if(preg_match('/"TOKEN":"([a-zA-Z0-9_\-\.]+)"/',$html,$match)){
             return $match[1];
         }else{
@@ -36,7 +37,7 @@ class teambition{
             'client_id' => '90727510-5e9f-11e6-bf41-15ed35b6cc41',
             'response_type' => 'session'
         ]);
-        $result = self::get('https://account.teambition.com/api/login/phone',0,$postJson,1);
+        $result = self::get('httpsus.teambition.com/api/login/phone',0,$postJson,1);
         if($result){
             $cookie = '';
             if(preg_match('/TEAMBITION_SESSIONID=([a-zA-Z0-9=]+);/',$result['header'],$match)){
@@ -57,7 +58,7 @@ class teambition{
      * @return array
      */
     public static function get_projects($cookie){
-        $api = 'https://www.teambition.com/api/v2/projects?';
+        $api = 'https://us.teambition.com/api/v2/projects?';
         $param = [
             '_organizationId' => '000000000000000000000405',
             'selectBy' => 'joined',
@@ -81,7 +82,7 @@ class teambition{
      * @return array
      */
     public static function get_project($projectId,$cookie){
-        $api = 'https://www.teambition.com/api/projects/'.$projectId;
+        $api = 'https://us.teambition.com/api/projects/'.$projectId;
         $result = self::get($api,$cookie);
         if($result){
             $result = json_decode($result,true);
@@ -100,7 +101,7 @@ class teambition{
      * @return array
      */
     public static function get_dirs($projectId,$dirId,$cookie,$count=100,$order='updatedDesc',$page=1){
-        $api = 'https://www.teambition.com/api/collections?';
+        $api = 'https://us.teambition.com/api/collections?';
         $param = [
             '_parentId' => $dirId,
             '_projectId' => $projectId,
@@ -126,7 +127,7 @@ class teambition{
      * @return array
      */
     public static function get_files($projectId,$dirId,$cookie,$count=100,$order='updatedDesc',$page=1){
-        $api = 'https://www.teambition.com/api/works?';
+        $api = 'https://us.teambition.com/api/works?';
         $param = [
             '_parentId' => $dirId,
             '_projectId' => $projectId,
@@ -150,7 +151,7 @@ class teambition{
      * @return array
      */
     public static function get_download_url($parentId,$cookie){
-        $result = self::get('https://www.teambition.com/api/works/'.$parentId,$cookie);
+        $result = self::get('https://us.teambition.com/api/works/'.$parentId,$cookie);
         if($result){
             $result = json_decode($result,true);
             if($result['downloadUrl']){
@@ -164,7 +165,7 @@ class teambition{
     }
 
     public static function get_dir($parentId,$cookie){
-        $result = self::get('https://www.teambition.com/api/collections/'.$parentId,$cookie);
+        $result = self::get('https://us.teambition.com/api/collections/'.$parentId,$cookie);
         if($result){
             $result = json_decode($result,true);
             if($result){
@@ -270,7 +271,7 @@ class teambition{
      * @return array
      */
     public static function get_orgId($cookie){
-        $api = 'https://www.teambition.com/api/organizations/personal';
+        $api = 'https://us.teambition.com/api/organizations/personal';
         $result = self::get($api,$cookie);
         if($result){
             $result = json_decode($result,true);
