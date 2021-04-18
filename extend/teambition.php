@@ -37,7 +37,7 @@ class teambition{
             'client_id' => '90727510-5e9f-11e6-bf41-15ed35b6cc41',
             'response_type' => 'session'
         ]);
-        $result = self::get('httpsus.teambition.com/api/login/phone',0,$postJson,1);
+        $result = self::get('https://us.teambition.com/api/login/phone',0,$postJson,1);
         if($result){
             $cookie = '';
             if(preg_match('/TEAMBITION_SESSIONID=([a-zA-Z0-9=]+);/',$result['header'],$match)){
