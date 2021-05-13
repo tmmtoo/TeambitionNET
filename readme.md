@@ -1,8 +1,8 @@
 #这是一个TeambitionShare修改版本，因为原版本不支持Teambition国际版，这次修改过，以支持国际版本，欢迎使用。欢迎入群交流~~~
 
-tg：https://t.me/rssdaniao
+tg：https://t.me/rssbig
 
-tg群：https://t.me/daniaoboke
+tg群：https://t.me/joinchat/SKct5jFnL_PUvCFr
 
 安装教程：https://www.daniao.org/13352.html
 
